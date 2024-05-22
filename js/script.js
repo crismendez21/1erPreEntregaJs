@@ -15,28 +15,28 @@ if(ingreseSuNombre != VACIO && ingreseSuApellido != VACIO) {
 pedirNombre ();
 // Función para solicitar el préstamo
 function solicitarMonto() {
-    let monto = parseFloat(prompt("Ingrese el monto del préstamo:"));
+    let monto = parseFloat(prompt("Ingrese el monto del préstamo"));
     if (monto <= 0) {
-        alert("Por favor, ingrese un monto válido.");
+        alert("Ingrese un monto valido.");
         return solicitarMonto();
     }
     return monto;
 }
 function solicitarInteres() {
-    let intereses = parseFloat(prompt("Ingrese la tasa de interés (%):"));
+    let intereses = parseFloat(prompt("Ingrese la tasa de interés"));
     if (intereses <= 0) {
-        alert("Por favor, ingrese una tasa de interés válida.");
+        alert("Ingrese un monto valido.");
         return solicitarInteres();
     }
     return intereses;
 }
-function solicitarPlazo() {
-    let plazo = parseInt(prompt("Ingrese el plazo del préstamo (en meses):"));
-    if (plazo <= 0) {
-        alert("Por favor, ingrese un plazo válido.");
-        return solicitarPlazo();
+function solicitarCuotas() {
+    let cuota = parseInt(prompt("Ingrese la cantidad de cuotas"));
+    if (cuota <= 0) {
+        alert("Ingrese un monto valido.");
+        return solicitarCuotas();
     }
-    return plazo;
+    return cuota;
 }
 // Función que simula el prestamo
 function simuladorPrestamo() {
@@ -44,13 +44,13 @@ function simuladorPrestamo() {
     alert("Ingrese los detalles del prestamo.");
     let monto = solicitarMonto();
     let interes = solicitarInteres();
-    let plazo = solicitarPlazo();
+    let cuota = solicitarCuotas();
     // Calcular el interes 
     let montoTotal = monto * (1 + (interes / 100));
-    // Calcular la cuota mensual
-    let cuotaMensual = montoTotal / plazo;
+    // Calcular la cuota
+    let cuotaMensual = montoTotal / cuota;
     // Mostrar el resultado
-    let mensaje = "El monto total del prestamo es de $" + montoTotal + " " + "con una cuota mensual de $" + " " + cuotaMensual + " " + "en" + " " + plazo + " " +"meses";
+    let mensaje = "El monto total del prestamo es de $" + montoTotal + " " + "con una cuota de $" + " " + cuotaMensual + " " + "en" + " " + cuota + " " +"meses";
     alert(mensaje);
 }
 simuladorPrestamo();
