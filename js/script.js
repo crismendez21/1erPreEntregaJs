@@ -38,14 +38,14 @@ function solicitarPlazo() {
     }
     return plazo;
 }
-// Función principal que ejecuta el simulador de préstamos
+// Función que simula el prestamo
 function simuladorPrestamo() {
     alert("¡Bienvenido al simulador de prestamos!");
-    alert("Por favor, ingrese los detalles del prestamo.");
+    alert("Ingrese los detalles del prestamo.");
     let monto = solicitarMonto();
     let interes = solicitarInteres();
     let plazo = solicitarPlazo();
-    // Calcular el interes del monto ingresado
+    // Calcular el interes 
     let montoTotal = monto * (1 + (interes / 100));
     // Calcular la cuota mensual
     let cuotaMensual = montoTotal / plazo;
@@ -53,5 +53,4 @@ function simuladorPrestamo() {
     let mensaje = "El monto total del prestamo es de $" + montoTotal + " " + "con una cuota mensual de $" + " " + cuotaMensual + " " + "en" + " " + plazo + " " +"meses";
     alert(mensaje);
 }
-// Ejecutar la función principal
 simuladorPrestamo();
